@@ -32,7 +32,7 @@ private:
 
 	std::vector<std::pair<uint, uint>> m_changes; // source, destination
 
-	std::vector<sf::Uint8> m_pixels;
+	std::vector<std::uint8_t> m_pixels;
 
 	std::array<Cell, Type::COUNT * 3> m_cellTypes;
 
@@ -116,7 +116,7 @@ public:
 
 	const Cell& getCellType(uint8_t type) const { return m_cellTypes[type]; }
 
-	std::vector<sf::Uint8>& pixels()			{ return m_pixels; }
+	std::vector<std::uint8_t>& pixels()			{ return m_pixels; }
 
 
 	// Faster but small bias to side scanned from (allieviated by random scan line chosen)

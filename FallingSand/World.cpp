@@ -19,7 +19,7 @@ void World::update() {
 
 	// INPUTS
 
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
 		Vec2i pos = sf::Mouse::getPosition(window);
 
 		for (size_t x = pos.x; x < pos.x + 8; x++) {
@@ -29,7 +29,7 @@ void World::update() {
 			}
 		}
 	}
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Right)) {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right)) {
 		Vec2i pos = sf::Mouse::getPosition(window);
 
 		for (size_t x = pos.x; x < pos.x + 10; x++) {
@@ -39,7 +39,7 @@ void World::update() {
 			}
 		}
 	}
-	if (sf::Mouse::isButtonPressed(sf::Mouse::XButton1)) {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Extra1)) {
 		Vec2i pos = sf::Mouse::getPosition(window);
 
 		for (size_t x = pos.x; x < pos.x + 8; x++) {
@@ -49,7 +49,7 @@ void World::update() {
 			}
 		}
 	}
-	if (sf::Mouse::isButtonPressed(sf::Mouse::XButton2)) {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Extra2)) {
 		Vec2i pos = sf::Mouse::getPosition(window);
 
 		for (size_t x = pos.x; x < pos.x + 20; x++) {

@@ -34,7 +34,7 @@
 #include <cstdint>
 
 #include "ArrayGrid.h"
-#include "SFML/Graphics.hpp"
+#include <SFML/Graphics.hpp>
 #include "SFMath.h"
 
 #include "Element.h"
@@ -50,7 +50,7 @@ void Universe::update() {
 	sandCount = 0;
 	gravelCount = 0;
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::P)) {
 		Vec2i pos = sf::Mouse::getPosition(window);
 		std::shared_ptr<Element> e = m_grid.getCell(pos.x, pos.y);
 		std::cout << (int)e->phase << " (" << e->vx << ", " << e->vy << ")" << " mass = " << e->mass << std::endl;
@@ -59,7 +59,7 @@ void Universe::update() {
 
 	// INPUTS
 
-	if (sf::Mouse::isButtonPressed(sf::Mouse::XButton2)) {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Extra2)) {
 		Vec2i pos = sf::Mouse::getPosition(window);
 
 		for (size_t x = pos.x; x < pos.x + 20; x++) {
@@ -72,7 +72,7 @@ void Universe::update() {
 
 
 
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Right)) {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right)) {
 		Vec2i pos = sf::Mouse::getPosition(window);
 
 		for (size_t x = pos.x; x < pos.x + 100; x++) {
@@ -83,7 +83,7 @@ void Universe::update() {
 		}
 	}
 		
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {
 		Vec2i pos = sf::Mouse::getPosition(window);
 
 		for (size_t x = pos.x; x < pos.x + 10; x++) {
@@ -93,7 +93,7 @@ void Universe::update() {
 			}
 		}
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::G)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::G)) {
 		Vec2i pos = sf::Mouse::getPosition(window);
 
 		for (size_t x = pos.x; x < pos.x + 10; x++) {
@@ -106,7 +106,7 @@ void Universe::update() {
 
 
 
-	if (sf::Mouse::isButtonPressed(sf::Mouse::XButton1)) {
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Extra1)) {
 		Vec2i pos = sf::Mouse::getPosition(window);
 
 		for (size_t x = pos.x; x < pos.x + 10; x++) {
@@ -116,7 +116,7 @@ void Universe::update() {
 			}
 		}
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S)) {
 		Vec2i pos = sf::Mouse::getPosition(window);
 
 		for (size_t x = pos.x; x < pos.x + 10; x++) {
@@ -126,7 +126,7 @@ void Universe::update() {
 			}
 		}
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::L)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::L)) {
 		Vec2i pos = sf::Mouse::getPosition(window);
 
 		for (size_t x = pos.x; x < pos.x + 10; x++) {

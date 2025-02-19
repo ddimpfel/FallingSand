@@ -7,19 +7,17 @@
 #define FRAMERATE	60
 
 int main() {
-	sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "FALLING SAND SIMULATION");
+	sf::RenderWindow window(sf::VideoMode({ WIDTH, HEIGHT }), "FALLING SAND SIMULATION");
 	window.setFramerateLimit(FRAMERATE);
 	Universe universe(WIDTH, HEIGHT, window);
 
-	sf::Texture textureBuffer;
-	textureBuffer.create(WIDTH, HEIGHT);
+	sf::Texture textureBuffer{ sf::Vector2u(WIDTH, HEIGHT) };
 
 	sf::Sprite sprite(textureBuffer);
 
-	sf::Text text;
-	sf::Font font; 
-	font.loadFromFile("arial.ttf");
-	text.setFont(font);
+	sf::Font font;
+	font.openFromFile("arial.ttf");
+	sf::Text text = sf::Text(font);
 	text.setFillColor(sf::Color::White);
 
 	auto mouseBox = sf::RectangleShape(Vec2f(1.f, 1.f));
@@ -28,9 +26,8 @@ int main() {
 	mouseBox.setFillColor(sf::Color::Transparent);
 
 	while (window.isOpen()) {
-		sf::Event event{};
-		while (window.pollEvent(event)) {
-			if (event.type == sf::Event::Closed)
+		while (std::optional event = window.pollEvent()) {
+			if (event->is<sf::Event::Closed>())
 				window.close();
 		}
 

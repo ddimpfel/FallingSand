@@ -34,7 +34,7 @@
 #include <cstdint>
 
 #include "ArrayGrid.h"
-#include "SFML/Graphics.hpp"
+#include <SFML/Graphics.hpp>
 #include "SFMath.h"
 
 #include "Element.h"
@@ -63,7 +63,7 @@ private:
 	std::vector<std::pair<uint, uint>> m_collisions;
 	bool m_collisionHandling = false;
 
-	std::vector<sf::Uint8> m_pixels;
+	std::vector<std::uint8_t> m_pixels;
 
 	std::unordered_map<std::string, std::shared_ptr<Element>> m_elements;
 
@@ -163,7 +163,7 @@ public:
 
 	std::shared_ptr<Element> getParticleType(const std::string& type) { return m_elements[type]; }
 
-	std::vector<sf::Uint8>& pixels() { return m_pixels; }
+	std::vector<std::uint8_t>& pixels() { return m_pixels; }
 
 	void update();
 	void updateElement(uint x, uint y);
